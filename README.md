@@ -1,48 +1,101 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# Conector n8n - Gerador de Números Aleatórios (True Random)
 
-# n8n-nodes-starter
+Projeto desenvolvido como parte do **Desafio Técnico** para a vaga de Estágio na empresa **Onfly**.
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](https://n8n.io). It includes the node linter and other dependencies.
+---
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+## Descrição
+Este projeto consiste na criação de um **conector customizado (Custom Node)** para a plataforma de automação low-code **n8n**.  
+O objetivo é estender as capacidades do n8n, oferecendo aos usuários uma maneira simples e confiável de gerar números inteiros **verdadeiramente aleatórios** em seus workflows.
 
-If you would like your node to be available on n8n cloud you can also [submit your node for verification](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/).
+A aleatoriedade é garantida pela integração direta com a **API pública do random.org**.
 
-## Prerequisites
+---
 
-You need the following installed on your development machine:
+## Features
+- **Interface Intuitiva**: O node aparece na UI do n8n como *"Random"*, com a operação *True Random Number Generator*.  
+- **Configuração Simplificada**: Dois campos numéricos, **Min** e **Max**, permitem definir facilmente o intervalo.  
+- **Aleatoriedade Real**: Consome exclusivamente a API do random.org.  
+- **Design Consistente**: Ícone SVG para identificação visual no n8n.  
+- **Ambiente Dockerizado**: Execução completa via Docker Compose (n8n + PostgreSQL).  
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+---
 
-## Using this starter
+## Pré-requisitos
+- **Git** → [Download](https://git-scm.com/)  
+- **Docker + Docker Compose** → [Download](https://www.docker.com/)  
+- **Node.js v22 (LTS)** → [Download](https://nodejs.org/)  
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+---
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+## Instalação e Execução Local
 
-## More information
+1. **Clone o Repositório**
+   ```bash
+   git clone https://github.com/SEU-USUARIO/desafio-n8n-FINAL.git
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+2. **Acesse a pasta do projeto**
+   ```bash
+   cd desafio-n8n-FINAL
 
-## License
+3. **Compile e suba o ambiente**
+    # a. Instala dependências
+    npm install
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+    # b. Compila TypeScript → JavaScript (/dist)
+    npm run build
+
+    # c. Sobe n8n + Postgres em segundo plano
+    docker-compose up -d
+
+        OBS: A primeira execução pode levar alguns minutos.
+
+4. **Verifique os contêineres**
+   ```bash
+   docker-compose ps
+
+        OBS: Esperado: serviços n8n e postgres com status Up ou running.
+
+5. **Encerrar o ambiente**
+   ```bash
+   docker-compose down
+
+## Como Usar o Node
+  1. Acesse: http://localhost:5678
+  2. Configure o usuário owner (primeiro acesso).
+  3. Crie um novo workflow (Start from scratch).
+  4. Clique em + → adicione o node Random.
+  5. Configure os campos:
+  6. Min: valor mínimo.
+  7. Max: valor máximo.
+  8. Clique em Execute Node.
+
+  Exemplo de saída JSON:
+
+  {
+    "randomNumber": 42
+  }
+
+## Estrutura do Projeto
+      .
+      ├── dist/                     # Código JS compilado (usado pelo n8n)
+      ├── nodes/                    # Código-fonte TypeScript
+      │   └── random/
+      │       ├── random.node.ts    # Lógica e definição do node
+      │       └── icon.svg          # Ícone do node
+      ├── .gitignore                # Arquivos e pastas a serem ignorados pelo Git
+      ├── docker-compose.yml        # Configuração do ambiente n8n + Postgres
+      ├── package.json              # "Identidade" do projeto, dependências e scripts
+      ├── README.md                 # Esta documentação
+      └── tsconfig.json             # Regras para o compilador TypeScript
+
+## Tecnologias Utilizadas
+Plataforma: n8n v1.85.4
+Linguagem: TypeScript
+Runtime: Node.js v22 (LTS)
+Containerização: Docker & Docker Compose
+Banco de Dados: PostgreSQL v11
+API Externa: random.org
+
+## Conclusão
+A produção deste projeto foi um processo de grande aprendizado, especialmente por envolver a configuração de um ambiente de desenvolvimento completo com Docker, a criação de um node customizado em TypeScript e a depuração de desafios de integração. Cada etapa contribuiu significativamente para o meu desenvolvimento profissional.
