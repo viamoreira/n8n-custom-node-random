@@ -1,4 +1,4 @@
-# Conector n8n - Gerador de Números Aleatórios (True Random)
+# Conector n8n - Gerador de Números Aleatórios 
 
 Projeto desenvolvido como parte do **Desafio Técnico** para a vaga de Estágio na empresa **Onfly**.
 
@@ -42,6 +42,7 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
    cd desafio-n8n-FINAL
 
 3. **Compile e suba o ambiente**
+   
    a. Instala dependências
     npm install
 
