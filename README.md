@@ -43,22 +43,23 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
 
 3. **Compile e suba o ambiente**
    
-   a. Instala dependências
-    npm install
+    a. Instala dependências
+         ```bash
+         npm install
 
-   b. Compila TypeScript → JavaScript (/dist)
-    npm run build
+      b. Compila TypeScript → JavaScript (/dist)
+       ```bash
+         npm run build
 
-     c. Sobe n8n + Postgres em segundo plano
+   c. Sobe n8n + Postgres em segundo plano
+   ```bash
     docker-compose up -d
-
-        OBS: A primeira execução pode levar alguns minutos.
+      OBS: A primeira execução pode levar alguns minutos.
 
 5. **Verifique os contêineres**
    ```bash
    docker-compose ps
-
-        OBS: Esperado: serviços n8n e postgres com status Up ou running.
+      OBS: Esperado: serviços n8n e postgres com status Up ou running.
 
 6. **Encerrar o ambiente**
    ```bash
@@ -95,10 +96,15 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
 
 ## Tecnologias Utilizadas
 Plataforma: n8n v1.85.4
+
 Linguagem: TypeScript
+
 Runtime: Node.js v22 (LTS)
+
 Containerização: Docker & Docker Compose
+
 Banco de Dados: PostgreSQL v11
+
 API Externa: random.org
 
 ## Conclusão
