@@ -3,13 +3,13 @@
 Projeto desenvolvido como parte do **Desafio Técnico** para a vaga de Estágio na empresa **Onfly**.
 
 ## Nota sobre Contribuições
-Este projeto foi desenvolvido integralmente pela autora como parte do desafio técnico proposto. A seção de "Contributors" do GitHub pode, eventualmente, exibir outros usuários. Isso se deve à utilização de arquivos de configuração e boilerplate (`.editorconfig`, `.gitignore`, etc.) que foram originados do template oficial `n8n-nodes-starter`. Toda a lógica, implementação e customização do conector `Random` são de autoria própria.
+Este projeto foi desenvolvido como parte do desafio técnico. A seção de "Contributors" do GitHub pode, eventualmente, exibir outros usuários. Isso se deve à utilização de arquivos de configuração (`.editorconfig`, `.gitignore`, etc.) que foram originados do template oficial `n8n-nodes-starter`. Toda a lógica, implementação e customização do conector `Random` são de autoria própria.
 
 ---
 
 ## Descrição
 Este projeto consiste na criação de um **conector customizado (Custom Node)** para a plataforma de automação low-code **n8n**.  
-O objetivo é estender as capacidades do n8n, oferecendo aos usuários uma maneira simples e confiável de gerar números inteiros **verdadeiramente aleatórios** em seus workflows.
+O objetivo é estender as capacidades do n8n, oferecendo aos usuários uma maneira simples e confiável de gerar números inteiros **aleatórios** em seus workflows.
 
 A aleatoriedade é garantida pela integração direta com a **API pública do random.org**.
 
@@ -17,8 +17,8 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
 
 ## Features
 - **Interface Intuitiva**: O node aparece na UI do n8n como *"Random"*, com a operação *True Random Number Generator*.  
-- **Configuração Simplificada**: Dois campos numéricos, **Min** e **Max**, permitem definir facilmente o intervalo.  
-- **Aleatoriedade Real**: Consome exclusivamente a API do random.org.  
+- **Configuração Simplificada**: Dois campos numéricos, **Min** e **Max**, definem o intervalo.  
+- **Aleatoriedade Real**: Utiliza exclusivamente a API do random.org.  
 - **Design Consistente**: Ícone SVG para identificação visual no n8n.  
 - **Ambiente Dockerizado**: Execução completa via Docker Compose (n8n + PostgreSQL).  
 
@@ -42,10 +42,10 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
    cd desafio-n8n-FINAL
 
 3. **Compile e suba o ambiente**
-     a. Instala dependências
+   a. Instala dependências
     npm install
 
-     b. Compila TypeScript → JavaScript (/dist)
+   b. Compila TypeScript → JavaScript (/dist)
     npm run build
 
      c. Sobe n8n + Postgres em segundo plano
@@ -53,13 +53,13 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
 
         OBS: A primeira execução pode levar alguns minutos.
 
-4. **Verifique os contêineres**
+5. **Verifique os contêineres**
    ```bash
    docker-compose ps
 
         OBS: Esperado: serviços n8n e postgres com status Up ou running.
 
-5. **Encerrar o ambiente**
+6. **Encerrar o ambiente**
    ```bash
    docker-compose down
 
