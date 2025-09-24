@@ -39,13 +39,13 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
    cd desafio-n8n-FINAL
 
 3. **Compile e suba o ambiente**
-    # a. Instala dependências
+     a. Instala dependências
     npm install
 
-    # b. Compila TypeScript → JavaScript (/dist)
+     b. Compila TypeScript → JavaScript (/dist)
     npm run build
 
-    # c. Sobe n8n + Postgres em segundo plano
+     c. Sobe n8n + Postgres em segundo plano
     docker-compose up -d
 
         OBS: A primeira execução pode levar alguns minutos.
