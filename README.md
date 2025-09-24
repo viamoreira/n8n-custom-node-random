@@ -2,7 +2,7 @@
 
 Projeto desenvolvido como parte do **Desafio Técnico** para a vaga de Estágio na empresa **Onfly**.
 
-### Nota sobre Contribuições
+## Nota sobre Contribuições
 Este projeto foi desenvolvido integralmente pela autora como parte do desafio técnico proposto. A seção de "Contributors" do GitHub pode, eventualmente, exibir outros usuários. Isso se deve à utilização de arquivos de configuração e boilerplate (`.editorconfig`, `.gitignore`, etc.) que foram originados do template oficial `n8n-nodes-starter`. Toda a lógica, implementação e customização do conector `Random` são de autoria própria.
 ---
 
