@@ -42,19 +42,22 @@ A aleatoriedade é garantida pela integração direta com a **API pública do ra
    cd desafio-n8n-FINAL
 
 3. **Compile e suba o ambiente**
-   
+
     a. Instala dependências
-         ```bash
-         npm install
+    ```bash
+    npm install
+    ```
 
-      b. Compila TypeScript → JavaScript (/dist)
-       ```bash
-         npm run build
+    b. Compila TypeScript → JavaScript (/dist)
+    ```bash
+    npm run build
+    ```
 
-   c. Sobe n8n + Postgres em segundo plano
-   ```bash
+    c. Sobe n8n + Postgres em segundo plano
+    ```bash
     docker-compose up -d
-      OBS: A primeira execução pode levar alguns minutos.
+    ```
+    OBS: A primeira execução pode levar alguns minutos.
 
 5. **Verifique os contêineres**
    ```bash
